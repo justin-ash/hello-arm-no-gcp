@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world-no-gcp
+  namespace: gcp-app
   labels:
     app: hello-world-no-gcp
 spec:
@@ -31,6 +32,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: hello-world-html-no-gcp
+  namespace: gcp-app
 data:
   index.html: |
     <!DOCTYPE html>
@@ -50,6 +52,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-world-service-no-gcp
+  namespace: gcp-app
 spec:
   selector:
     app: hello-world-no-gcp
